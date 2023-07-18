@@ -1,0 +1,13 @@
+- model: courses.lesson
+  pk: 1
+  fields:
+    lesson_number: 1
+    lesson_topic: "Wartość Bezwzględna"
+    chapter: 1
+
+- model: courses.lesson
+  pk: 2
+  fields:
+    lesson_number: 1
+    lesson_topic: "Liczby naturalne"
+    chapter: 11

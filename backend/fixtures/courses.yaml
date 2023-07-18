@@ -1,0 +1,20 @@
+- model: courses.DuoMathCourse
+  pk: 1
+  fields:
+    course_name: "Math"
+    type_of_school: "PS"
+    type_of_level:  "B"
+
+- model: courses.DuoMathCourse
+  pk: 2
+  fields:
+    course_name: "Math"
+    type_of_school: "SS"
+    type_of_level:  "B"
+
+- model: courses.DuoMathCourse
+  pk: 3
+  fields:
+    course_name: "Math"
+    type_of_school: "SS"
+    type_of_level:  "A"

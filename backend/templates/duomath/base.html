@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'about_us' %}">About_us</a></li>
+
+                    {% if user.is_authenticated %}
+                        <li><a  href="{% url 'users:user' %}">User</a></li>
+                        <li><a  href="{% url 'courses:index' %}">Course</a></li>
+                        <li><a  href="{% url 'users:user_logout' %}">Logout</a></li>
+                    </ul>
+                    <div>
+                        Picture {{ user.username }}
+                    </div>
+                    {% else %}
+                        <li><a  href="{% url 'users:user_register' %}">Register</a></li>
+                        <li><a  href="{% url 'users:user_login' %}">Login</a></li>
+                    </ul>
+                    {% endif %}
+
+            </div>
+        </nav>
+        <div>
+            {% block body_block %}
+            {% endblock %}
+        </div>
+        <footer>
+            Footer
+        </footer>
+    </body>
+</html>

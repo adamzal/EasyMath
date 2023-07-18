@@ -1,0 +1,93 @@
+{% extends '../duomath/base.html' %}
+{% block body_block %}
+
+<div>
+    <form method="POST" action="{% url 'courses:show_all_courses' %}">
+            {% csrf_token %}
+            <input type="hidden" name="user_id" value="{{ request.user.id }}">
+            <button type="submit">+ Add New Course</button>
+    </form>
+    {% if courses %}
+        {% for course in courses %}
+            {% if course.completed %}
+                <div style="background-color: green">
+            {% else %}
+                <div style="background-color: gray">
+            {% endif %}
+                    <a href="{% url 'courses:show_chapters' name=course.course.course_name user_course_pk=course.pk %}">
+                        <div><img src="" alt="Zdjęcie"></div>
+                        <div>
+                            <div>{{ course.course.course_name }}</div>
+                            <div>{{ course.course.get_type_of_school_display }}</div>
+                            <div>{{ course.course.get_type_of_level_display }}</div>
+                            <div>progress_bar</div>
+                        </div>
+                    </a>
+                </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if all_courses %}
+        {% for course in all_courses %}
+                <div style="background-color: gray">
+                    <a href="{% url 'courses:add_new_course' name=course.course_name course_pk=course.pk %}">
+                        <div><img src="" alt="Zdjęcie"></div>
+                        <div>
+                            <div>{{ course.course_name }}</div>
+                            <div>{{ course.get_type_of_school_display }}</div>
+                            <div>{{ course.get_type_of_level_display }}</div>
+                            <div>progress_bar</div>
+                        </div>
+                    </a>
+                </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if chapters %}
+        {% for chapter in chapters %}
+            {% if chapter.completed %}
+                <div style="background-color: green">
+            {% else %}
+                <div style="background-color: gray">
+            {% endif %}
+                    <a href="{% url 'courses:show_lessons' name=chapter.chapter.chapter_name user_chapter_pk=chapter.pk %}">
+                        <div><img src="" alt="Zdjęcie"></div>
+                        <div>
+                            <div>{{ chapter.chapter.chapter_number }}. {{ chapter.chapter.chapter_name }}</div>
+                            <div>progress_bar</div>
+                        </div>
+                    </a>
+                </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if lessons %}
+        {% for lesson in lessons %}
+            {% if lesson.completed %}
+                <div style="background-color: green">
+            {% else %}
+                <div style="background-color: gray">
+            {% endif %}
+                    <a href="{% url 'courses:do_lesson' name=lesson.lesson.lesson_topic user_lesson_pk=lesson.pk %}">
+                        <div><img src="" alt="Zdjęcie"></div>
+                        <div>
+                            <div>{{ lesson.lesson.lesson_number }}. {{ lesson.lesson.lesson_topic }}</div>
+                        </div>
+                    </a>
+                </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if exercises %}
+        {% for exercise in exercises %}
+            {% if not exercise.completed %}
+                <div>
+                    <div>{{ exercise.exercise.text }}</div>
+                    <div>{{ exercise.exercise.function_name }}</div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}

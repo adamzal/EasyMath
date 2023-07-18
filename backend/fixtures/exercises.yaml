@@ -1,0 +1,19 @@
+- model: courses.exercise
+  pk: 1
+  fields:
+    function_name: "PPPCH01L01E01"
+    lesson: 1
+    difficult: "E"
+    text: "Oblicz błąd względny przybliżenia liczby 0,75 liczbą 0,8."
+    answear: "Aby to obliczyć"
+    points: 1
+
+- model: courses.exercise
+  pk: 2
+  fields:
+    function_name: "PPPCH11L01E01"
+    lesson: 2
+    difficult: "E"
+    text: "Ile to jest 2+2"
+    answear: "jest to 4"
+    points: 1

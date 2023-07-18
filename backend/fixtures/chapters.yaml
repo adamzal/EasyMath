@@ -1,0 +1,77 @@
+- model: courses.chapter
+  pk: 1
+  fields:
+    course: 3
+    chapter_name: "Liczby Rzeczywiste"
+    chapter_number: 1
+
+- model: courses.chapter
+  pk: 2
+  fields:
+    course: 3
+    chapter_name: "Wyrażenia algebraiczne"
+    chapter_number: 2
+
+- model: courses.chapter
+  pk: 3
+  fields:
+    course: 3
+    chapter_name: "Funkcje"
+    chapter_number: 3
+
+- model: courses.chapter
+  pk: 4
+  fields:
+    course: 3
+    chapter_name: "Równania i nierówności"
+    chapter_number: 4
+
+- model: courses.chapter
+  pk: 5
+  fields:
+    course: 3
+    chapter_name: "Ciągi"
+    chapter_number: 5
+
+- model: courses.chapter
+  pk: 6
+  fields:
+    course: 3
+    chapter_name: "Trygonometria"
+    chapter_number: 6
+
+- model: courses.chapter
+  pk: 7
+  fields:
+    course: 3
+    chapter_name: "Planimetria"
+    chapter_number: 7
+
+- model: courses.chapter
+  pk: 8
+  fields:
+    course: 3
+    chapter_name: "Geometria na płaszczyźnie kartezjańskiej"
+    chapter_number: 8
+
+- model: courses.chapter
+  pk: 9
+  fields:
+    course: 3
+    chapter_name: "Stereometria"
+    chapter_number: 9
+
+- model: courses.chapter
+  pk: 10
+  fields:
+    course: 3
+    chapter_name: "Statystyka, kombinatoryka i prawdopodobieństwo"
+    chapter_number: 10
+
+- model: courses.chapter
+  pk: 11
+  fields:
+    course: 1
+    chapter_name: "Obliczenia w pamięci"
+    chapter_number: 1
+
